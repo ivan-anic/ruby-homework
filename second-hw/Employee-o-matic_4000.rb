@@ -13,13 +13,13 @@ def add_employee(employees)
   case employee_type
    when 'e' then employee = Employee.new(full_name, id)
    when 'p' then 
-	print 'Programming languages: ';
+  print 'Programming languages: ';
     languages = gets.chomp
     employee = Programmer.new(full_name, id, languages);
    when 'o' then 
-	print 'Office: ';
+  print 'Office: ';
     office = gets.chomp
-   	employee = OfficeManager.new(full_name, id, office);
+    employee = OfficeManager.new(full_name, id, office);
    else puts 'Invalid type'; return
   end
 
@@ -56,6 +56,7 @@ def edit_employee(employees)
 
   current_user.id = new_id
   current_user.full_name = new_full_name
+
 end
 
 def view_employees(employees)
@@ -69,11 +70,11 @@ end
 
 def sorted_employees(employees, sort_by)
   if (sort_by == 'f')
-  	employees.sort_by do |employee|
-   	  employee.name
+    employees.sort_by do |employee|
+      employee.name
     end
   else employees.sort_by do |employee|
-  	  employee.surname 
+      employee.surname 
     end
   end
 end
